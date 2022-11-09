@@ -36,11 +36,16 @@ public static void menu(ArrayList<Livro> biblioteca) {
 		}
 	}
 public static void criarBiblioteca(ArrayList<Livro> biblioteca) {
-	biblioteca.add(new Livro("É assim que começa", "Galera", "Ficção", 2022, 50));
-	biblioteca.add(new Livro("É assim que começa 2", "Galera", "Romance", 2022, 50));
-	biblioteca.add(new Livro("É assim que começa 3", "Galera", "Ficção", 2022, 50));
-	biblioteca.add(new Livro("É assim que começa 4", "Galera", "Romance", 2022, 50));
-	biblioteca.add(new Livro("É assim que começa 4", "Galera", "Terror", 2022, 50));
+	biblioteca.add(new Livro("A revolução dos bichos", "Companhia das Letras", "Ficção", 2007, 9.9));
+	biblioteca.add(new Livro("É assim que começa", "Galera", "Romance", 2019, 49.9));
+	biblioteca.add(new Livro("Box Trilogia O Senhor dos Anéis", "HarperCollins", "Fantasia", 2022, 89.9));
+	biblioteca.add(new Livro("O homem mais rico da Babilônia", "HarperCollins", "Clássico", 2017, 17.99));
+	biblioteca.add(new Livro("1984", "Companhia das Letras", "Ficção", 2009, 9.30));
+	biblioteca.add(new Livro("Kit Estilhaça-me: A série completa", "Universo dos Livros", "Ficção", 2020, 89.98));
+	biblioteca.add(new Livro("Imperfeitos", "Faro Editorial", "Romance", 2022, 22.40));
+	biblioteca.add(new Livro("Verity", "Galera", "Romance", 2020, 33.24));
+	biblioteca.add(new Livro("Os segredos da mente milionária", "Editora Sextante", "Finanças", 2006, 33.70));
+	biblioteca.add(new Livro("Mais esperto que o Diabo: O mistério revelado da liberdade e do sucesso", "Citadel", "Finanças", 2014, 22.50));
 }
 
 public static void cadastroLivro(ArrayList<Livro> biblioteca) {
@@ -75,7 +80,17 @@ public static void listarLivros(ArrayList<Livro> biblioteca) {
 }
 
 public static void buscaNome(ArrayList<Livro> biblioteca) {
+	Scanner tTitulo = new Scanner(System.in);
 	System.out.println("Digite o termo que deseja utilizar para a busca:");
+	String termo;
+	tTitulo.reset();
+	termo = tTitulo.nextLine();
+		for (int i=0; i<biblioteca.size(); i++) {
+			Livro index = biblioteca.get(i);
+				if(index.titulo.contains(termo)) {
+					index.info();
+				}
+		}
 }
 
 public static void buscaCategoria(ArrayList<Livro> biblioteca) {
